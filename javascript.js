@@ -2,9 +2,10 @@ function createGrid() {
   const container = document.querySelector(".container");
   for (let i = 0; i < 16*16; i++) {
     div = document.createElement("div");
-    div.style.backgroundColor = createColor();
+    div.classList.add(i)
     container.appendChild(div);
   }
+  container.addEventListener("mouseover", e => e.target.style.backgroundColor = createColor())
 }
 
 function createColor() {
